@@ -1,7 +1,7 @@
 package apuesta;
 
 /**
- * Esta clase nos permite cosa
+ * Esta clase nos permite hacer apuestas y cobrarlas
  * 
  * @author jperez
  * @version 1.0
@@ -39,11 +39,11 @@ public class Apuesta {
 
     
     /**
-     * Este metodo es un constructor con parametros que guarda informacion de la apuesta
+     * Este metodo es un constructor con parametros guarda informacion de la apuesta
      * 
-     * @param dineroDisp variable que guardara el valor dado al atributo dinero_disp
-     * @param golesLocal variable que guardara el valor dado al atributo goles_local
-     * @param golesVisitante variable que guardara el valor dado al atributo goles_visitante
+     * @param dineroDisp guarda el valor dado al atributo dinero_disp
+     * @param golesLocal guarda el valor dado al atributo goles_local
+     * @param golesVisitante guarda el valor dado al atributo goles_visitante
      */
 
     /*Contructor con par�metros*/
@@ -75,14 +75,16 @@ public class Apuesta {
     }
     
     /**
-     * M�todo para apostar una cantidad de dinero no pudiendo ser esta menor a 0 ni superior a dinero_disp
-     * @param dinero variable que guardara la cantidad de dinero apostada
-     * @throws Exception mensaje de error mostrado al usuario en caso de que se cumpla algun if 
-     * al introducir el valor de dinero
+     * Metodo para apostar una cantidad de dinero 
+     * no pudiendo ser esta menor a 0 ni superior a dinero_disp
+     * @param dinero guardara la cantidad de dinero apostada
+     * @throws Exception mensaje de error mostrado al usuario si se cumple
+	 * alguna condicion al introducir el valor de dinero
      */
     
     /* M�todo para apostar una cantidad de dinero
-     * Permite elegir la cantidad a apostar, no pudiendo ser inferior a 1 ni superior a tu saldo disponible
+     * Permite elegir la cantidad a apostar, 
+     * no pudiendo ser inferior a 1 ni superior a tu saldo disponible
      */
     public void apostar(int dinero) throws Exception {
         if (dinero <= 0) {
@@ -99,16 +101,17 @@ public class Apuesta {
     }
     
     /**
-     * Metodo que comprueba si se ha acertado el resultado del partido devolviendo true de acertarlo
-     * @param local variable que guardara los goles del equipo local
-     * @param visitante variable que guardara los goles del equipo visitante
+     * Metodo que comprueba el resultado del partido devolviendo true de acertarlo
+     * @param local guardara los goles del equipo local
+     * @param visitante guardara los goles del equipo visitante
      * @return devuelve el valor de variable acertado
      * @throws Exception mensaje de error mostrado por pantalla 
      * en caso de que el valor dado a local o visitante sea menor a 0
      */
     
     /* M�todo que comprueba si se ha acertado el resultado del partido
-     * En caso de que lo haya acertado devuelve true. Chequea que no se metan menos de 0 goles
+     * En caso de que lo haya acertado devuelve true. 
+     * Chequea que no se metan menos de 0 goles
      */
     public boolean comprobarResultado(int local, int visitante) throws Exception {
         boolean acertado = false;
@@ -123,15 +126,16 @@ public class Apuesta {
     }
     
     /**
-     * Metodo usado para cobrar la apuesta, comprueba que se acerto el resultado y, en ese caso, 
-     * añade el valor apostado multiplicado por 10 al saldo disponible
-     * @param golesLocal variable que guardara la cantidad de goles del equipo local
-     * @param golesVisit variable que guardara la cantidad de goles del equipo visitante
-     * @throws Exception mensaje de error mostrado por pantalla en caso de no ser acertada la apuesta
+     * Metodo usado para cobrar la apuesta, comprueba que se acerto el resultado y,
+     *  en ese caso, añade el valor apostado multiplicado por 10 al saldo disponible
+     * @param golesLocal guarda la cantidad de goles del equipo local
+     * @param golesVisit guarda la cantidad de goles del equipo visitante
+     * @throws Exception mensaje de error mostrado al usuario si no acierta la apuesta
      */
     
     /* M�todo para cobrar la apuesta.
-     * Comprueba que se acert� el resultado y, en ese caso, a�ade el valor apostado multiplicado por 10
+     * Comprueba que se acert� el resultado y, en ese caso,
+     * a�ade el valor apostado multiplicado por 10
      * al saldo disponible
      */
     void cobrarApuesta(int golesLocal, int golesVisit) throws Exception {
